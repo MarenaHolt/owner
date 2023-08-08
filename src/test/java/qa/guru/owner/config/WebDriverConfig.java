@@ -1,14 +1,20 @@
 package qa.guru.owner.config;
 
-public class WebDriverConfig {
+import org.aeonbits.owner.Config;
 
-    public String getBaseUrl() {
-        return "https://github.com";
-    }
+import java.net.URL;
 
-    public Browser getBrowser() {
-        return Browser.CHROME;
-    }
+public interface WebDriverConfig extends Config {
 
+    @Key("baseUrl")
+    @DefaultValue("https://github.com")
+    String getBaseUrl();
 
+    @Key("browser")
+    @DefaultValue("CHROME")
+    Browser getBrowser();
+
+    @Key("remoteUrl")
+    @DefaultValue("http://localhost:4444")
+    URL getRemoteURL();
 }

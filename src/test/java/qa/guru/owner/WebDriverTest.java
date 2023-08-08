@@ -9,6 +9,9 @@ import qa.guru.owner.config.WebDriverProvider;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class WebDriverTest {
+    //запуск теста из консоли
+    // ./gradlew clean test -DbaseUrl=https://github.com -Dbrowser=FIREFOX
+    // ./gradlew clean test -DbaseUrl=https://github.com -Dbrowser=CHROME
     private WebDriver driver;
 
     @BeforeEach
@@ -19,7 +22,7 @@ public class WebDriverTest {
     @Test
     public void testGithub() {
         String title = driver.getTitle();
-        assertEquals("GitHub: Where the world builds software · GitHub", title);
+        assertEquals("GitHub: Let’s build from here · GitHub", title);
     }
 
     @AfterEach
